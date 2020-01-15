@@ -1,0 +1,10 @@
+(define (fast-expt b n)
+    (define (square x) (* x x))
+    (define (iter product b counter)
+        (cond ((= counter 0) product)
+            ((even? counter) (iter product (square b) (/ counter 2)))
+            ;((even? counter) (square (iter product b (/ counter 2))))  a^b = (a^(b/2))^2 = ((a^2)^(b/2))
+            (else (iter (* product b) b (- counter 1)))))
+    (iter 1 b n))
+
+(fast-expt 2 10)
