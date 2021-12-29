@@ -8,7 +8,7 @@
         x))
 ;define good-enough
 (define (good-enough? guess x)
-    (< (abs (- (* guess guess guess) x)) 0.001))
+    (= (improve guess x) guess))
 ;define improve
 (define (improve guess x)
     (/ (+ (/ x (square guess)) (* 2 guess)) 3))

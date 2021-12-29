@@ -8,8 +8,7 @@
         x))
 ;define good-enough
 (define (good-enough? guess x)
-    (< (abs (- (improve guess x) guess))
-        (* guess 0.001)))
+    (= (improve guess x) guess))
 ;define average
 (define (average x y)
     (/
@@ -27,4 +26,4 @@
 (define (sqrt x)
     (sqrt-iter 1.0 x))
 
-(sqrt 100000000000000000000000000)
+(sqrt 0)
